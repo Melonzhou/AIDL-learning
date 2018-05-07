@@ -14,6 +14,7 @@ public class MyService extends Service{
 
     private IMyAidlInterface.Stub mBinder;
     private String mText;
+    private TreeNode mNode;
     public IBinder onBind(Intent intent) {
         return mBinder;
     }
@@ -28,11 +29,21 @@ public class MyService extends Service{
             }
 
             @Override
-            public String getStringWithDate() throws RemoteException {
+            public String getStringWithDate(String errStr) throws RemoteException {
                 if (mText != null) {
                     return mText + System.currentTimeMillis();
                 }
                 return null;
+            }
+
+            @Override
+            public void setLinkNode(TreeNode node) throws RemoteException {
+                mNode = node;
+            }
+
+            @Override
+            public TreeNode getTreeNode() throws RemoteException {
+                return mNode;
             }
         };
     }

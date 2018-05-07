@@ -23,4 +23,10 @@
         android:textColor="@color/colorAccent"
         android:background="@color/colorPrimary"/>
 
+    <ImageView
+        android:id="@+id/view_image_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="center"/>
+
 </LinearLayout>

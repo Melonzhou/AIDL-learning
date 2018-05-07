@@ -17,7 +17,10 @@
             </intent-filter>
         </activity>
 
-        <service android:name="com.melon.learn.service.MyService"></service>
+        <service android:name="com.melon.learn.service.MyService"
+            android:process=":remote"></service>
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
 
 </manifest>
